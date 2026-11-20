@@ -59,3 +59,16 @@ for colonne in colonnes_textuelles:
 
 print("Nettoyage terminé !")
 
+
+# Sélection des variables 
+
+X = abonnes[
+    [
+        "anciennete_mois",
+        "prix_mensuel_eur",
+        "distance_domicile_m",
+        "visites_par_mois",
+        "seances_coaching",
+        "reclamations"
+    ]
+]
