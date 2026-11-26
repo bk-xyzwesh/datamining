@@ -105,3 +105,16 @@ plt.xlabel("Nombre de groupes")
 plt.ylabel("Inertie")
 
 plt.show()
+
+
+# Application de l'algorithme KMeans avec 3 clusters 
+
+kmeans = KMeans(
+    n_clusters=3,
+    random_state=42,
+    n_init=10
+)
+
+abonnes["cluster"] = kmeans.fit_predict(X_scaled)
+
+print(abonnes["cluster"].value_counts())
