@@ -82,4 +82,26 @@ X_scaled = scaler.fit_transform(X)
 print("Standardisation terminée !")
 
 
+# Nombre de clusters : methode du coude
 
+inerties = []
+
+for k in range(1, 8):
+
+    kmeans = KMeans(
+        n_clusters=k,
+        random_state=42,
+        n_init=10
+    )
+
+    kmeans.fit(X_scaled)
+
+    inerties.append(kmeans.inertia_)
+
+plt.plot(range(1, 8), inerties, marker="o")
+
+plt.title("Méthode du coude")
+plt.xlabel("Nombre de groupes")
+plt.ylabel("Inertie")
+
+plt.show()
