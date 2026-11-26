@@ -72,3 +72,14 @@ X = abonnes[
         "reclamations"
     ]
 ]
+
+
+# Standarisation des données
+scaler = StandardScaler()
+
+X_scaled = scaler.fit_transform(X)
+
+print("Standardisation terminée !")
+
+
+
